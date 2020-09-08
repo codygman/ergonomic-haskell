@@ -30,12 +30,23 @@ executables:
   records-exe:
     main:                Main.hs
     source-dirs:         app
+    default-extensions:
+      - DataKinds
+      - DuplicateRecordFields
+      - FlexibleContexts
+      - FlexibleInstances
+      - GADTs
+      - MultiParamTypeClasses
+      - OverloadedLabels
+      - TemplateHaskell
+      - UndecidableInstances
+    dependencies:
+      - records
+      - optics
     ghc-options:
     - -threaded
     - -rtsopts
     - -with-rtsopts=-N
-    dependencies:
-    - records
 
 tests:
   records-test:

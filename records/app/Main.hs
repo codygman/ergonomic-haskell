@@ -4,21 +4,21 @@ import Lib
 import Optics
 import Optics.TH
 
-data Person = Person {name :: String, age :: Int}
+data Person = Person { personName :: String, personAge :: Int}
 
-makeFieldLabelsWith noPrefixFieldLabels ''Person
+makeFields ''Person
 
-data Dog = Dog {name :: String, age :: Int}
+data Dog = Dog {dogName :: String, dogAge :: Int}
 
-makeFieldLabelsWith noPrefixFieldLabels ''Dog
+makeFields ''Dog
 
-data CatBall = CatBall {name :: String, ballType :: String}
+data CatBall = CatBall {catBallName :: String, catBallType_ :: String}
 
-makeFieldLabelsWith noPrefixFieldLabels ''CatBall
+makeFields ''CatBall
 
-data Cat = Cat {name :: String, age :: Int, favoriteBall :: CatBall}
+data Cat = Cat {catName :: String, catAge :: Int, catFavoriteBall :: CatBall}
 
-makeFieldLabelsWith noPrefixFieldLabels ''Cat
+makeFields ''Cat
 
 main :: IO ()
 main =
@@ -26,17 +26,17 @@ main =
       dog = Dog "doggo" 5
       cat = Cat "doggo" 5 (CatBall "doggos" "tennis ball")
    in do
-        if person ^. #name == "codygman"
+        if person ^. name == "codygman"
           then do
-            putStrLn $ "Good day, " ++ person ^. #name
-            putStrLn $ "Your dog's name: " ++ dog ^. #name
-            putStrLn $ "Your cat's name: " ++ cat ^. #name
-            if cat ^. #favoriteBall % #name == "doggos"
+            putStrLn $ "Good day, " ++ person ^. name
+            putStrLn $ "Your dog's name: " ++ dog ^. name
+            putStrLn $ "Your cat's name: " ++ cat ^. name
+            if cat ^. favoriteBall % name == "doggos"
               then do
                 putStrLn "One second.. there's been a mix up it seems!"
                 let fixedCat =
-                      cat & #favoriteBall % #name .~ "cattos"
-                          & #favoriteBall % #ballType .~ "yarn ball"
-                putStrLn $ "Your cat's favorite ball type: " ++ fixedCat ^. #name
-              else putStrLn $ "Your cat's name: " ++ cat ^. #name
+                      cat & favoriteBall % name .~ "cattos"
+                          & favoriteBall % type_ .~ "yarn ball"
+                putStrLn $ "Your cat's favorite ball type: " ++ fixedCat ^. name
+              else putStrLn $ "Your cat's name: " ++ cat ^. name
           else pure ()

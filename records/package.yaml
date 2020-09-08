@@ -35,6 +35,7 @@ executables:
       - DuplicateRecordFields
       - FlexibleContexts
       - FlexibleInstances
+      - FunctionalDependencies
       - GADTs
       - MultiParamTypeClasses
       - OverloadedLabels

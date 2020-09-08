@@ -42,7 +42,7 @@ executable records-exe
       Paths_records
   hs-source-dirs:
       app
-  default-extensions: DataKinds DuplicateRecordFields FlexibleContexts FlexibleInstances GADTs MultiParamTypeClasses OverloadedLabels TemplateHaskell UndecidableInstances
+  default-extensions: DataKinds DuplicateRecordFields FlexibleContexts FlexibleInstances FunctionalDependencies GADTs MultiParamTypeClasses OverloadedLabels TemplateHaskell UndecidableInstances
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base >=4.7 && <5

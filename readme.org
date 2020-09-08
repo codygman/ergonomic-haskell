@@ -1,2 +1,2 @@
 See 
-https://codygman.dev/drafts/2020-09-07-Ergonomic_haskell_1_records.html for more!
+https://codygman.dev/posts/2020-09-07-Ergonomic_haskell_1_records.html for more!

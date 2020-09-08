@@ -1,4 +1,4 @@
-module NoOpticsMain where
+module NoOptics where
 
 data Person = Person {personName :: String, personAge :: Int}
 

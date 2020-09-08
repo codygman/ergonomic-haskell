@@ -38,6 +38,7 @@ library
 executable records-exe
   main-is: Main.hs
   other-modules:
+      NoOptics
       Paths_records
   hs-source-dirs:
       app
